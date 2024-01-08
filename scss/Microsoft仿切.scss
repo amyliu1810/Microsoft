@@ -1,0 +1,478 @@
+      * {
+          box-sizing: border-box;
+        }
+
+      a {
+          text-decoration: none;
+        }
+
+      html,
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 13px;
+          margin: 0;
+        }
+
+      ul,
+      li {
+          list-style-type: none;
+        }
+
+      .container-normal {
+          width: 100%;
+          //   max-width: 1680px;
+        }
+
+      .container-full {
+          width: 100%;
+        }
+
+      nav {
+          height: 54px;
+          display: flex;
+          align-items: center;
+          margin: auto;
+          white-space: nowrap;
+
+          .nav-logo {
+              margin: 1px;
+              transform: scale(0.5);
+            }
+
+          .pc-menu {
+            width: 800px;
+            min-width: 375px; //避免爆版
+            display: flex;
+            margin-right: 50px;
+            cursor: pointer;
+
+            :hover {
+              text-decoration: 1.5px underline; // 底線
+              }
+
+            li {
+                display: flex;
+                margin-right: 35px;
+            }
+        }
+        
+          .func-menu {
+              width: 35%;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              ul {
+                margin-right: 20px;
+            }
+        }
+
+
+          // 漢堡條
+          .ham-small {
+              display: none; //這不能移除版面會跑掉 
+            }            
+          .ham-btn {
+              display: block; // 使用block，因為是label 要變成區塊
+              width: 30px;
+              height: 30px;
+              background-image: url(../img/btn.png);
+              background-size: cover; // 覆蓋整個背景
+              background-position: center; // 調整圖片在按鈕中的位置
+              background-repeat: no-repeat; //不重複顯示
+              cursor: pointer;
+            }
+          .allMicrosoft {
+              width: 600px;
+              display: flex;
+              justify-content: flex-end;
+              margin-right: 80px;
+
+              .func-hide {
+                cursor: pointer;
+              }
+              .func-hide:hover {
+                border-bottom: 2px solid black; // 底線
+              }
+              li {
+                  //display: flex; 盒子移掉圖標寬度比較正常
+                  margin-right: 10px;
+                  padding: 0 0 0 15px;
+              }              
+              .text-hight {
+                cursor: pointer;
+              }
+              .text-hight:hover {
+                border-bottom: 2px solid black; // 底線
+                 }
+
+
+              .all-menu {
+                  background-color: aquamarine;
+                  background-color: #f2f2f2;
+                  display: flex;
+                  flex-wrap: wrap;
+                  position: absolute;
+                  width: 90%;
+                  z-index: 10;
+                  border-bottom: 1.5px solid;
+                  top: 50px;
+                  right: 20px;
+                  line-height: 35px;
+              }
+              .map {
+                  text-align: center;
+                  width: 100%;
+                  background-color: gainsboro;
+              }
+
+              .all-menu {
+                  display: none;
+              }
+              #all-ham:checked~.all-menu {
+                  display: flex;
+              }
+              #all-ham:not(:checked)~.all-menu {
+                  display: none;
+              }
+          }
+
+          //  版面縮小後，隱藏文字
+          @media (max-width:1465px) {
+              .text-hight {
+                  display: none;
+                }
+            }
+        }
+
+      main {
+          .main-card {
+              display: flex;
+              justify-content: center;
+
+              .card {
+                  width: 120px;
+                  height: 100px;
+                  text-align: center;
+                  margin: 40px 24px;
+
+                  .link {
+                      color: #0067B8;
+                      font-weight: 600;
+                      cursor: pointer;
+                      text-decoration: underline;
+                      letter-spacing: 0.5px;
+                    }
+                }
+            }
+
+          .business-text {
+              margin: 0;
+              margin-bottom: 15px;
+              font-size: 29px;
+              margin-left: 5%;
+            }
+
+          .four-card-1st,
+          .four-card-2st {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin: auto;
+              flex-wrap: wrap;
+              width: 90%;
+
+              .card {
+                // 扣25px是圖片之間的空隙(大概抓)，乘3是有三條空白處，除4是四張圖
+                width: calc((100% - 25px *3) /4); 
+                height: 470px;
+                line-height: 25px;
+                text-align: left;
+
+                @media (max-width:1080px) {
+                    width: calc((100% - 25px * 1) / 2);
+                }
+
+                @media (max-width:1400px) {
+                    p {
+                        margin-top: 2.5rem;
+                    }
+                }
+
+                @media (max-width:530px) {
+                    width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                }
+                h3 {
+                    width: auto;
+                    height: 0;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+
+                .link {
+                    color: #0067B8;
+                    font-weight: 600;
+                    line-height: 4;
+                    cursor: pointer;
+                    transition: transform 0.2s ease;
+
+                    &:hover {
+                        text-decoration: underline;
+
+                        .arrow {
+                            transform: translateX(3px) scale(1.1);
+                        }
+                    }
+                }
+
+                .arrow {
+                    color: #0067B8;
+                    font-weight: 600;
+                    line-height: 4;
+                    cursor: pointer;
+                    transition: transform 0.2s ease;
+                    margin-left: 5px;
+                }
+
+                @media (max-width:530px) {
+                    .four-card-1st {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+          .one-card {
+              width: 90%;
+              margin: auto;
+              margin-bottom: 120px;
+
+              img {
+                  max-width: 100%; // 限制圖片的最大寬度
+                  width: 100%; // 將圖片的寬度縮小到原來的一半
+                }
+            }
+
+          .follow {
+              font-size: 15px;
+              margin-top: -4%;
+              padding: 0 0 7% 5%;
+
+              .icon {
+                  font-size: 25px;
+                  text-indent: 10px;
+              }
+          }
+      }
+
+      footer {
+          background-color: #F2F2F2;
+          color: #616161;
+          // height: 380px; 會影響螢幕縮小時的縮放
+
+          .footer-menu {
+              display: flex;
+              justify-content: flex-start;
+              line-height: 30px;
+              padding: 0 5%;
+              flex-wrap: wrap;
+
+              ul {
+                  width: 16.6%;
+
+                  @media (max-width:1080px) {
+                      width: 33.3%;
+                  }
+                  @media (max-width:530px) {
+                      width: 100%;
+                  }
+              }
+          }
+
+          .footer-nav {
+              margin: auto;
+              padding: 8px;
+
+              .footer-earth {
+                  padding: 2% 0 0 4%;
+                }
+
+              .footer-CCPA {
+                  padding: 0 45% 0 1%;
+                }
+
+              .earth-logo {
+                  width: 24px;
+                  height: 21px;
+                  vertical-align: middle;
+                }
+
+              .CCPA-logo {
+                  vertical-align: middle;
+                }
+
+              .footer-nav-link {
+                  padding: 0 24px 4px 0;
+                  display: inline-block;
+                }
+            }
+        }
+
+
+      .heading {
+          padding: 10% 0 0;
+          font-weight: 600;
+          font-size: 15px;
+        }
+
+      h3 {
+          font-size: 24px;
+          margin: 0;
+          margin-bottom: 12px;
+          padding: 0;
+        }
+
+      p {
+          font-size: 16px;
+        }
+
+      @media (max-width:860px) {
+          nav {
+              height: 54px;
+              display: flex;
+              align-items: center;
+              position: relative;
+
+              .nav-logo {
+                  width: 160%;
+                  padding: 16px 6px 16px 10px;
+                  transform: scale(0.5);
+                  position: absolute;
+                }
+
+              .pc-menu {
+                  width: 800px;
+                  height: calc(100vh - 100px);
+                  display: flex;
+                  margin-right: 50px;
+
+                  li {
+                      display: flex;
+                      margin-right: 35px;
+                    }
+                }
+
+              .func-menu {
+                  width: 100%;
+                  position: absolute;
+
+                  .search {
+                      margin-right: 85%;
+                    }
+                }
+
+              .mobile-menu {
+                  background-color: #f2f2f2;
+                  width: 100%;
+                  //  width: 700px; 
+                  top: 54px;
+                  left: 0;
+                  position: absolute;
+                  z-index: 20;
+                  margin: 0;
+                  padding: 0;
+                  border-bottom: 1px solid black; // 底線
+
+                  li {
+                      padding: 15px 30px;
+                      border: 1px solid #e6e6e6;
+                      font-size: 15px;
+                    }
+                }
+
+              .allMicrosoft {
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                  margin-right: 20px;
+
+                  .func-hide {
+                      display: none;
+                    }
+                }
+
+              // 打開開關
+              .ham-small {
+                  display: block;
+                }
+
+              //關閉時出現打叉   
+              #ham-swith:checked+.ham-btn {
+                  background-image: url(../img/close.png);
+                }
+
+              /* 按的時候選單會出現 */
+              #ham-swith:checked~.mobile-menu {
+                  display: block;
+                }
+
+              /* 再按的時候(沒被選)會隱藏  */
+              #ham-swith:not(:checked)~.mobile-menu {
+                  display: none;
+                }
+
+              //===============================
+
+              .mobile-menu .sub-dropdown-menu {
+                  display: none;
+                }
+
+              nav .func-menu li {
+                  display: block;
+                }
+
+              .mobile-menu li i {
+                  float: right;
+                }
+
+              //===============================
+              
+              // 清除被滑鼠點擊時出現的藍色區塊 (焦點,被關注)
+              nav .func-menu .mobile-menu li:focus {
+                  border: 1px dashed black;
+                }
+
+              // 隱藏下拉選單的向上箭頭
+              .mobile-menu li i:nth-of-type(2) {
+                  display: none;
+                }
+
+              .chevron-switch:checked+label .sub-dropdown-menu,
+              .chevron-switch:checked+label li i:nth-of-type(2) {
+                  display: block;
+                }
+
+              //隱藏打開子選單的向上箭頭
+              .chevron-switch:checked+label li i:nth-of-type(1) {
+                  display: none;
+                }
+
+              // 隱藏All選單
+              #all-ham:checked~.all-menu {
+                  display: flex;
+                }
+
+              #all-ham:not(:checked)~.all-menu {
+                  display: none;
+                }
+
+              #all-ham:checked~.all-menu {
+                  display: none;
+                }
+            }
+        }

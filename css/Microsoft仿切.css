@@ -1,0 +1,417 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.container-normal {
+  width: 100%;
+}
+
+.container-full {
+  width: 100%;
+}
+
+nav {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  white-space: nowrap;
+}
+nav .nav-logo {
+  margin: 1px;
+  transform: scale(0.5);
+}
+nav .pc-menu {
+  width: 800px;
+  min-width: 375px;
+  display: flex;
+  margin-right: 50px;
+  cursor: pointer;
+}
+nav .pc-menu :hover {
+  -webkit-text-decoration: 1.5px underline;
+          text-decoration: 1.5px underline;
+}
+nav .pc-menu li {
+  display: flex;
+  margin-right: 35px;
+}
+nav .func-menu {
+  width: 35%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .func-menu ul {
+  margin-right: 20px;
+}
+nav .ham-small {
+  display: none;
+}
+nav .ham-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/btn.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+nav .allMicrosoft {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
+}
+nav .allMicrosoft .func-hide {
+  cursor: pointer;
+}
+nav .allMicrosoft .func-hide:hover {
+  border-bottom: 2px solid black;
+}
+nav .allMicrosoft li {
+  margin-right: 10px;
+  padding: 0 0 0 15px;
+}
+nav .allMicrosoft .text-hight {
+  cursor: pointer;
+}
+nav .allMicrosoft .text-hight:hover {
+  border-bottom: 2px solid black;
+}
+nav .allMicrosoft .all-menu {
+  background-color: aquamarine;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 90%;
+  z-index: 10;
+  border-bottom: 1.5px solid;
+  top: 50px;
+  right: 20px;
+  line-height: 35px;
+}
+nav .allMicrosoft .map {
+  text-align: center;
+  width: 100%;
+  background-color: gainsboro;
+}
+nav .allMicrosoft .all-menu {
+  display: none;
+}
+nav .allMicrosoft #all-ham:checked ~ .all-menu {
+  display: flex;
+}
+nav .allMicrosoft #all-ham:not(:checked) ~ .all-menu {
+  display: none;
+}
+@media (max-width: 1465px) {
+  nav .text-hight {
+    display: none;
+  }
+}
+
+main .main-card {
+  display: flex;
+  justify-content: center;
+}
+main .main-card .card {
+  width: 120px;
+  height: 100px;
+  text-align: center;
+  margin: 40px 24px;
+}
+main .main-card .card .link {
+  color: #0067B8;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+}
+main .business-text {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 29px;
+  margin-left: 5%;
+}
+main .four-card-1st,
+main .four-card-2st {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 90%;
+}
+main .four-card-1st .card,
+main .four-card-2st .card {
+  width: calc((100% - 75px) / 4);
+  height: 470px;
+  line-height: 25px;
+  text-align: left;
+}
+@media (max-width: 1080px) {
+  main .four-card-1st .card,
+  main .four-card-2st .card {
+    width: calc((100% - 25px) / 2);
+  }
+}
+@media (max-width: 1400px) {
+  main .four-card-1st .card p,
+  main .four-card-2st .card p {
+    margin-top: 2.5rem;
+  }
+}
+@media (max-width: 530px) {
+  main .four-card-1st .card,
+  main .four-card-2st .card {
+    width: 100%;
+  }
+}
+main .four-card-1st .card img,
+main .four-card-2st .card img {
+  width: 100%;
+}
+main .four-card-1st .card h3,
+main .four-card-2st .card h3 {
+  width: auto;
+  height: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+main .four-card-1st .card .link,
+main .four-card-2st .card .link {
+  color: #0067B8;
+  font-weight: 600;
+  line-height: 4;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+main .four-card-1st .card .link:hover,
+main .four-card-2st .card .link:hover {
+  text-decoration: underline;
+}
+main .four-card-1st .card .link:hover .arrow,
+main .four-card-2st .card .link:hover .arrow {
+  transform: translateX(3px) scale(1.1);
+}
+main .four-card-1st .card .arrow,
+main .four-card-2st .card .arrow {
+  color: #0067B8;
+  font-weight: 600;
+  line-height: 4;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: 5px;
+}
+@media (max-width: 530px) {
+  main .four-card-1st .card .four-card-1st,
+  main .four-card-2st .card .four-card-1st {
+    width: 100%;
+  }
+}
+main .one-card {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 120px;
+}
+main .one-card img {
+  max-width: 100%;
+  width: 100%;
+}
+main .follow {
+  font-size: 15px;
+  margin-top: -4%;
+  padding: 0 0 7% 5%;
+}
+main .follow .icon {
+  font-size: 25px;
+  text-indent: 10px;
+}
+
+footer {
+  background-color: #F2F2F2;
+  color: #616161;
+}
+footer .footer-menu {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 30px;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+footer .footer-menu ul {
+  width: 16.6%;
+}
+@media (max-width: 1080px) {
+  footer .footer-menu ul {
+    width: 33.3%;
+  }
+}
+@media (max-width: 530px) {
+  footer .footer-menu ul {
+    width: 100%;
+  }
+}
+footer .footer-nav {
+  margin: auto;
+  padding: 8px;
+}
+footer .footer-nav .footer-earth {
+  padding: 2% 0 0 4%;
+}
+footer .footer-nav .footer-CCPA {
+  padding: 0 45% 0 1%;
+}
+footer .footer-nav .earth-logo {
+  width: 24px;
+  height: 21px;
+  vertical-align: middle;
+}
+footer .footer-nav .CCPA-logo {
+  vertical-align: middle;
+}
+footer .footer-nav .footer-nav-link {
+  padding: 0 24px 4px 0;
+  display: inline-block;
+}
+
+.heading {
+  padding: 10% 0 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+}
+
+@media (max-width: 860px) {
+  nav {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* 按的時候選單會出現 */
+    /* 再按的時候(沒被選)會隱藏  */
+  }
+  nav .nav-logo {
+    width: 160%;
+    padding: 16px 6px 16px 10px;
+    transform: scale(0.5);
+    position: absolute;
+  }
+  nav .pc-menu {
+    width: 800px;
+    height: calc(100vh - 100px);
+    display: flex;
+    margin-right: 50px;
+  }
+  nav .pc-menu li {
+    display: flex;
+    margin-right: 35px;
+  }
+  nav .func-menu {
+    width: 100%;
+    position: absolute;
+  }
+  nav .func-menu .search {
+    margin-right: 85%;
+  }
+  nav .mobile-menu {
+    background-color: #f2f2f2;
+    width: 100%;
+    top: 54px;
+    left: 0;
+    position: absolute;
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+  }
+  nav .mobile-menu li {
+    padding: 15px 30px;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+  }
+  nav .allMicrosoft {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+  }
+  nav .allMicrosoft .func-hide {
+    display: none;
+  }
+  nav .ham-small {
+    display: block;
+  }
+  nav #ham-swith:checked + .ham-btn {
+    background-image: url(../img/close.png);
+  }
+  nav #ham-swith:checked ~ .mobile-menu {
+    display: block;
+  }
+  nav #ham-swith:not(:checked) ~ .mobile-menu {
+    display: none;
+  }
+  nav .mobile-menu .sub-dropdown-menu {
+    display: none;
+  }
+  nav nav .func-menu li {
+    display: block;
+  }
+  nav .mobile-menu li i {
+    float: right;
+  }
+  nav nav .func-menu .mobile-menu li:focus {
+    border: 1px dashed black;
+  }
+  nav .mobile-menu li i:nth-of-type(2) {
+    display: none;
+  }
+  nav .chevron-switch:checked + label .sub-dropdown-menu,
+  nav .chevron-switch:checked + label li i:nth-of-type(2) {
+    display: block;
+  }
+  nav .chevron-switch:checked + label li i:nth-of-type(1) {
+    display: none;
+  }
+  nav #all-ham:checked ~ .all-menu {
+    display: flex;
+  }
+  nav #all-ham:not(:checked) ~ .all-menu {
+    display: none;
+  }
+  nav #all-ham:checked ~ .all-menu {
+    display: none;
+  }
+}/*# sourceMappingURL=Microsoft仿切.css.map */
